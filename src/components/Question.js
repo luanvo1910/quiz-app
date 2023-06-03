@@ -3,7 +3,7 @@ import { quizContext } from "../contexts/quizContext"
 
 const Question = ({q}) => {
   const {        
-    quizState: {number, point},
+    quizState: {number},
     checkAnswer,
     nextQuestion
   } = useContext(quizContext)
@@ -45,10 +45,9 @@ const Question = ({q}) => {
 
   return (
     <div>
-      <h1>{point}</h1>
-      <h1>{number+1}.{currentQuestion.question}</h1>
-      <h2>{currentQuestion.category}</h2>
-      <div>
+      <p className="question">{number+1}.{currentQuestion.question}</p>
+      <p className="category">Category: {currentQuestion.category}</p>
+      <div className="answers">
         {answers.map((a, index) => (
           <p key={index}>
             <label>

@@ -12,8 +12,6 @@ const QuizContextProvider = ({children}) => {
         questions: [],
     })
 
-    const [showModal, setShowModal] = useState(false)
-
     const getQuestions = async() => {
         try {
             const response = await axios.get(`https://opentdb.com/api.php?amount=5`)
@@ -51,16 +49,18 @@ const QuizContextProvider = ({children}) => {
         setIsPaused(false)
     }
 
+    const [isLoading, setIsLoading] = useState(false)
+
     const quizContextData = {
         quizState,
-        showModal,
-        setShowModal,
         getQuestions,
         checkAnswer,
         nextQuestion,
         timer,
         handleStart,
-        handlePause
+        handlePause,
+        isLoading,
+        setIsLoading
     }
 
     return (

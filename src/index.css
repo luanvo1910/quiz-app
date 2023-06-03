@@ -1,13 +1,94 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+  background: rgb(41,47,51);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(141,217,252);
+}
+
+h3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(141,217,252);
+}
+
+button {
+  margin: 30px;
+  font-size: 18px;
+  height: 65px;
+  width: 250px;
+  border-radius: 10px;
+  border: none;
+  background: rgb(141,217,252);
+   cursor: pointer;
+ }
+
+ .display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }
+
+ .category {
+  display: flex;
+  flex-direction: column;
+  color: rgb(141,217,252);
+ }
+
+ .question {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  color: rgb(141,217,252);
+  font-size: 40px;
+ }
+
+ .answers {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  color: rgb(141,217,252);
+ }
+
+ .result {
+  background: rgb(51, 25, 0);                
+  height: 200px;                
+  width: 400px;  
+  padding: 10px;
+  margin: 0px auto;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }
+
+ .loader {
+  border: 16px solid #f3f3f3; 
+  border-top: 16px solid #3498db; 
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+  margin: 0px auto;
+ }
+
+ @keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

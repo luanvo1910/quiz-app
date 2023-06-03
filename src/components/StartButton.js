@@ -4,24 +4,26 @@ import { quizContext } from "../contexts/quizContext"
 const StartButton = () => {
     const {
         getQuestions,
-        setShowModal,
-        handleStart
+        handleStart,
+        setIsLoading
     } = useContext(quizContext)
 
     const start = e => {
         getQuestions()
-        setShowModal(true)
         handleStart()
+        setIsLoading(true)
     }
 
   return (
-    <div>
-        <p>
-        Start quiz
-            <button onClick={start}>
-                Start
-            </button>
-        </p>
+    <div className="display">
+        <h1>
+            Start quiz
+        </h1>
+        <button 
+            onClick={start}
+        >
+            Start
+        </button>  
     </div>
   )
 }

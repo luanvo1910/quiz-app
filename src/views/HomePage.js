@@ -6,12 +6,19 @@ import StartButton from "../components/StartButton"
 
 const HomePage = () => {
     const {
-        quizState: {questions, number}
+        quizState: {questions, number},
+        isLoading,
     } = useContext(quizContext)
 
   return (
     <>
-        {questions.length === 0 && <StartButton/>}
+        {isLoading === true && questions.length === 0 &&
+            <div>
+                <div className="loader"></div>
+                <h3>Loading questions...</h3>
+            </div>
+        }
+        {isLoading === false && questions.length === 0 && <StartButton/>}
         {questions.length > 0 && number < questions.length && <QuizModal/>}
         {questions.length > 0 && number === questions.length && <ResultModal/>}
     </>
